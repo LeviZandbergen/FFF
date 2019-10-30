@@ -4,12 +4,21 @@
         <div class="categorie">
             <select>
                 <?php
-                $categorie = "SELECT * FROM artikel INNER JOIN categorie";
+                $categorie = "SELECT * FROM categorie;";
+                $stmt = $db->prepare($categorie);
+                $stmt->execute(array());
+                $type = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 ?>
+                <?php
+                foreach ($type as $key => $value) {
+                    ?>
+                    <option><?php echo $type[$key]["type"] ?></option>
+                <?php } ?>
+
             </select>
         </div>
         <?php
-        $articles = "SELECT * FROM artikel INNER JOIN categorie";
+        $articles = "SELECT * FROM artikel";
         $stmt = $db->prepare($articles);
         $stmt->execute(array());
         $product_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
