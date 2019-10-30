@@ -1,31 +1,32 @@
 <html>
 <div class="content">
+    <div class="categorie">
+        <form method="POST">
+            <!--select box voor categorien-->
+            <select class="catSelect" name="categorie" onchange="this.form.submit()">
+                <option>------------</option>
+                <option value="allArticles">alle artikelen</option>
+                <?php
+                $categorie = "SELECT * FROM categorie;";
+                $stmt = $db->prepare($categorie);
+                $stmt->execute(array());
+                $type = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach ($type as $key => $value) {
+                    echo '<option value="' . $type[$key]["type"] . '">' . $type[$key]["type"] . '</option>';
+                } ?>
+
+            </select>
+        </form>
+    </div>
     <div class="itemContainer">
-        <div class="categorie">
-            <form method="POST">
-
-                <select name="categorie" onchange="this.form.submit()">
-                    <option>------------</option>
-                    <option value="allArticles">alle artikelen</option>
-                    <?php
-                    $categorie = "SELECT * FROM categorie;";
-                    $stmt = $db->prepare($categorie);
-                    $stmt->execute(array());
-                    $type = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-                    foreach ($type as $key => $value) {
-                        echo '<option value="' . $type[$key]["type"] . '">' . $type[$key]["type"] . '</option>';
-                    } ?>
-
-                </select>
-            </form>
-        </div>
-
+        <!--Selecteerd alle artikelen in query-->
         <?php
         $articles = "SELECT * FROM artikel";
         $stmt = $db->prepare($articles);
         $stmt->execute(array());
         $product_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
         if (isset($_POST['categorie']))
             if ($_POST['categorie'] == 'Huur') {
                 $articles = "SELECT * FROM artikel WHERE artikel_idCategorie = 2";
@@ -46,9 +47,10 @@
         if (!empty($product_array)) {
             foreach ($product_array as $key => $value) {
                 ?>
-                <div class="product-item" onclick="">
-                    <div class="product-image"><img style="max-height: 100%; max-width: 100%"
-                                                    src="../FFF/Images/<?php echo $product_array[$key]["afbeelding"]; ?>">
+                <div class="product-item" onclick="location.href='index.php'" style="cursor: pointer">
+                    <div class="product-image"><img
+                                style="max-height: 100%; max-width: 100%; margin: 0 auto; display: block;"
+                                src="../FFF/Images/<?php echo $product_array[$key]["afbeelding"]; ?>">
                     </div>
                     <div class="product-tile-footer">
                         <div class="product-title">Naam: <?php echo $product_array[$key]["naam"]; ?>
