@@ -16,7 +16,6 @@ include('DBconfig.php');
         <?php
     }
     ?>
-    <img onclick="location.href='index.php'" style="height: 100%; cursor: pointer" src="../FFF/Images/Logo.png">
 
 </div>
 <div id="menu">
