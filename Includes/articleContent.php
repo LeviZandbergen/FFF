@@ -47,32 +47,34 @@
         if (!empty($product_array)) {
             foreach ($product_array as $key => $value) {
                 ?>
-                <div class="product-item" onclick="location.href='index.php'" style="cursor: pointer">
-                    <div class="product-image"><img
-                                style="max-height: 100%; max-width: 100%; margin: 0 auto; display: block;"
-                                src="../FFF/Images/<?php echo $product_array[$key]["afbeelding"]; ?>">
+                <?php echo '<a href="product.php?id=' . $product_array[$key]['idartikel'] . '"/>' ?>
+                <div class="article-item" style="cursor: pointer">
+                    <div class="article-image">
+                        <img style="max-height: 100%; max-width: 100%; margin: 0 auto; display: block;"
+                             src="../FFF/Images/<?php echo $product_array[$key]["afbeelding"]; ?>">
                     </div>
                     <div class="product-tile-footer">
-                        <div class="product-title">Naam: <?php echo $product_array[$key]["naam"]; ?>
+                        <div class="article-title">Naam: <?php echo $product_array[$key]["naam"]; ?>
                         </div>
                         <?php if ($product_array[$key]["artikel_idCategorie"] == 1) { ?>
-                            <div class="product-price">Prijs: <?php echo "€" . $product_array[$key]["prijs"]; ?>
+                            <div class="article-price">Prijs: <?php echo "€" . $product_array[$key]["prijs"]; ?>
                             </div>
                         <?php } elseif ($product_array[$key]["artikel_idCategorie"] == 2) { ?>
-                            <div class="product-price">Prijs per
+                            <div class="article-price">Prijs per
                                 dag: <?php echo "€" . $product_array[$key]["prijsDag"]; ?>
                             </div>
-                            <div class="product-price">Prijs per
+                            <div class="article-price">Prijs per
                                 week: <?php echo "€" . $product_array[$key]["prijsWeek"]; ?>
                             </div>
                         <?php } ?>
                     </div>
                 </div>
-                <?php
 
+                <?php
             }
         }
         ?>
     </div>
 </div>
 </html>
+

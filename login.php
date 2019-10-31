@@ -1,23 +1,25 @@
 <link href="../FFF/Style/style.css" rel="stylesheet">
 <?php
-include('DBconfig.php');
-
 include "Includes/header.php";
 include "Includes/menu.php";
 include "Includes/loginContent.php";
 include "Includes/footer.php";
 ?>
 <?php
+//$ww = "medewerker1";
+//$wwhash = password_hash($ww, PASSWORD_DEFAULT);
+//echo $wwhash;
 $error = "";
 if (isset($_POST["submit"])) {
     $email = htmlspecialchars($_POST["email"]);
     $password = htmlspecialchars($_POST["wachtwoord"]);
 
     try {
-        $sql = "SELECT * FROM admin WHERE email = ?";
+        $sql = "SELECT * FROM medewerker WHERE email = ?";
         $stmt = $db->prepare($sql);
         $stmt->execute(array($email));
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
 
         if ($result) {
             $hash = $result["wachtwoord"];
@@ -27,7 +29,7 @@ if (isset($_POST["submit"])) {
                 $_SESSION["ID"] = 1;
                 $_SESSION["EMAIL"] = $result["email"];
                 $_SESSION["STATUS"] = 1;
-                echo "<script>location.href='http://localhost/project-sites/show-no-mercy/lijsten.php';</script>";
+                echo "<script>location.href='/project-sites/fff/medewerker.php';</script>";
             } else {
                 $error .= "Inloggegevens ongeldig. <br>";
             }

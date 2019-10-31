@@ -70,16 +70,16 @@ html {
     flex-wrap: wrap;
 }
 
-.product-item {
+.article-item {
     margin-left: 1%;
     margin-right: 1%;
     margin-bottom: 3%;
     border: 1px solid black;
-    width: 300px;
+    width: 400px;
     height: 275px;
 }
 
-.product-image {
+.article-image {
     height: 180px;
     border: 1px solid black;
 }
@@ -93,4 +93,20 @@ html {
 .catSelect {
     height: 50px;
     width: 150px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.cartFormInput {
+    margin-bottom: 5px;
+}
+
+#cartItems {
+    border: 1px solid black;
+    width: 100%;
+    height: 200px;
+    margin
 }

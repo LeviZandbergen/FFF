@@ -1,8 +1,23 @@
+<?php
+include('DBconfig.php');
+?>
 <html>
 
 <div id="upperHead">
     <img onclick="location.href='index.php'" style="height: 100%; cursor: pointer" src="../FFF/Images/Logo.png">
-    <a style="float: right" href="login.php">Login</a>
+    <?php
+    if (isset($_SESSION["ID"]) && $_SESSION["STATUS"] === 1) {
+        ?>
+        <a style="float: right" href="uitloggen.php">Logout</a>
+        <?php
+    } else {
+        ?>
+        <a style="float: right" href="login.php">Login</a>
+        <?php
+    }
+    ?>
+    <img onclick="location.href='index.php'" style="height: 100%; cursor: pointer" src="../FFF/Images/Logo.png">
+
 </div>
 <div id="menu">
     <div id="emptyContainer">
