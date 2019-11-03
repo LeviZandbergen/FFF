@@ -9,7 +9,7 @@ if ($_SESSION["artikelen"]) {
 } else {
     $_SESSION["artikelen"] = array();
 }
-//$_SESSION["artikelen"] = array();
+$_SESSION["artikelen"] = array();
 ?>
 
 <html>
@@ -109,15 +109,68 @@ if ($_SESSION["artikelen"]) {
             if (isset($_POST["submitKoop"]) && $products["onderhoud"] == 0) {
                 $product = array("id" => $products["idartikel"], "aantal" => $_POST["aantal"]);
                 array_push($_SESSION["artikelen"], $product);
-//                $_SESSION["artikelen"] = array_merge($_SESSION["artikelen"], $product);
 
             } elseif (isset($_POST["submitHuur"]) && $products["onderhoud"] == 0) {
-                $product = array($products["idartikel"], $_POST["aantal"], $_POST["startDatum"], $_POST["eindDatum"]);
-                $_SESSION["artikelen"] = array_merge($_SESSION["artikelen"], $product);
+
+                $query = "SELECT bestelDatum, retourDatum FROM orderregel WHERE orderregel_idArtikel = ?";
+                $stmt = $db->prepare($query);
+                $stmt->execute(array($_GET['id']));
+                $ranges = $stmt->fetch();
+
+
+                $start = new DateTime($_POST["startDatum"]);
+                $eind = new DateTime($_POST["eindDatum"]);
+                $now = new DateTime();
+//                if ($start < $now) {
+//                    echo("De begindatum moet in de toekomst zijn");
+//                }
+                $ingevuldeData = array('start' => $start, 'end' => $eind);
+
+
+                if ($start > $eind) {
+                    echo("Einddatum moet na start datum zijn");
+                } else {
+                    $product = array("id" => $products["idartikel"], "aantal" => $_POST["aantal"], "startDatum" => $_POST["startDatum"], "eindDatum" => $_POST["eindDatum"]);
+                    array_push($_SESSION["artikelen"], $product);
+                }
+
+                $interval = ($start->diff($eind));
+                $days = $interval->format('%d');
+                $weeks = round($days / 7, 2);
+                $whole = floor($weeks);
+                $comma = round($weeks - $whole, 2);
+
+                switch ($comma) {
+                    case 0.14:
+                        $huurdagen = 1;
+                        break;
+                    case 0.29:
+                        $huurdagen = 2;
+                        break;
+                    case 0.43:
+                        $huurdagen = 3;
+                        break;
+                    case 0.57:
+                        $huurdagen = 4;
+                        break;
+                    case 0.71:
+                        $huurdagen = 5;
+                        break;
+                    case 0.86:
+                        $huurdagen = 6;
+                        break;
+                    case 0:
+                        $huurdagen = 0;
+                        break;
+                }
+
+                echo($whole . " weken en " . $huurdagen . " dagen");
+                var_dump($comma);
+
             } else if ((isset($_POST["submitHuur"]) || isset($_POST["submitKoop"])) && $products["onderhoud"] == 1) {
                 echo "Dit product is in onderhoud";
             }
-            var_dump($_SESSION["artikelen"])
+            //            var_dump($_SESSION["artikelen"])
 
             ?>
         </div>

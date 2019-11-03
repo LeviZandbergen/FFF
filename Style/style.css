@@ -151,3 +151,15 @@ a {
     width: 100px;
     border: 1px solid black;
 }
+
+.contentcart {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin: 0 auto;
+    max-height: 100%;
+}
+
+.prullenbak {
+    margin-top: 5px;
+}

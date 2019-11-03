@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a43dfd4e-922d-466d-9a3c-78056c4f177e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Images/prullenbak.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Includes/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Includes/product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Includes/shoppingCartContent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Includes/shoppingCartContent.php" afterDir="false" />
@@ -49,18 +50,20 @@
     <session id="-1473851876">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="6" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="contactContent" value="1" />
           <entry key="css" value="4" />
-          <entry key="php" value="56" />
+          <entry key="php" value="57" />
           <entry key="png" value="1" />
         </counts>
       </usages-collector>
@@ -68,21 +71,21 @@
         <counts>
           <entry key="CSS" value="4" />
           <entry key="Image" value="1" />
-          <entry key="PHP" value="54" />
+          <entry key="PHP" value="55" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="1419" />
-          <entry key="php" value="7813" />
+          <entry key="css" value="1584" />
+          <entry key="php" value="9986" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="1419" />
+          <entry key="CSS" value="1584" />
           <entry key="HTML" value="1" />
-          <entry key="PHP" value="7726" />
+          <entry key="PHP" value="9899" />
           <entry key="PLAIN_TEXT" value="86" />
         </counts>
       </usages-collector>
@@ -96,21 +99,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Includes/product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="116" column="114" selection-start-line="116" selection-start-column="114" selection-end-line="116" selection-end-column="114" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#form#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="113">
+              <caret line="140" column="31" selection-start-line="140" selection-end-line="141" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Includes/articleContent.php">
+        <entry file="file://$PROJECT_DIR$/Includes/shoppingCartContent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            <state relative-caret-position="400">
+              <caret line="59" column="34" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -118,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Style/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1646">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="2624">
+              <caret line="164" selection-start-line="164" selection-end-line="164" />
             </state>
           </provider>
         </entry>
@@ -174,7 +173,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,12 +183,13 @@
             <path>
               <item name="FFF" type="b2602c69:ProjectViewProjectNode" />
               <item name="FFF" type="462c0819:PsiDirectoryNode" />
-              <item name="Includes" type="462c0819:PsiDirectoryNode" />
+              <item name="Images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -200,15 +199,15 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Project-Sites\FFF\Images" />
+      <recent name="C:\xampp\htdocs\Project-Sites\FFF" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Project-Sites\FFF" />
       <recent name="C:\xampp\htdocs\Project-Sites\FFF\Images" />
       <recent name="C:\xampp\htdocs\Project-Sites\FFF\Style" />
       <recent name="C:\MAMP\htdocs\Project\Includes" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Project-Sites\FFF" />
-      <recent name="C:\xampp\htdocs\Project-Sites\FFF\Images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -242,11 +241,13 @@
       <workItem from="1572530815312" duration="1024000" />
       <workItem from="1572535940417" duration="3607000" />
       <workItem from="1572546100790" duration="8124000" />
+      <workItem from="1572617049762" duration="3846000" />
+      <workItem from="1572681268059" duration="6419000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38935000" />
+    <option name="totallyTimeSpent" value="49200000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -387,23 +388,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Includes/shoppingCartContent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Includes/articleContent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -411,21 +395,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Includes/articleContent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Style/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1646">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="2624">
+          <caret line="164" selection-start-line="164" selection-end-line="164" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Includes/shoppingCartContent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="59" column="34" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Includes/product.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="116" column="114" selection-start-line="116" selection-start-column="114" selection-end-line="116" selection-end-column="114" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#form#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="113">
+          <caret line="140" column="31" selection-start-line="140" selection-end-line="141" />
         </state>
       </provider>
     </entry>
