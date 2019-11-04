@@ -147,8 +147,10 @@ a {
     flex-direction: row;
 }
 
-.artikelKarAfbeelding {
+.productAfbeelding {
     width: 100px;
+    height: 100%;
+    margin-right: 30px;
     border: 1px solid black;
 }
 
@@ -158,8 +160,4 @@ a {
     align-self: center;
     margin: 0 auto;
     max-height: 100%;
-}
-
-.prullenbak {
-    margin-top: 5px;
 }

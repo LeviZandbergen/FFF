@@ -9,7 +9,7 @@ if ($_SESSION["artikelen"]) {
 } else {
     $_SESSION["artikelen"] = array();
 }
-$_SESSION["artikelen"] = array();
+//$_SESSION["artikelen"] = array();
 ?>
 
 <html>
@@ -51,6 +51,8 @@ $_SESSION["artikelen"] = array();
 
     }
     ?>
+
+
     <div class="product-item">
         <div class="product-image">
             <img style="max-height: 100%; max-width: 100%; margin: 0 auto; display: block;"
@@ -107,66 +109,63 @@ $_SESSION["artikelen"] = array();
                 </form>
             <?php }
             if (isset($_POST["submitKoop"]) && $products["onderhoud"] == 0) {
-                $product = array("id" => $products["idartikel"], "aantal" => $_POST["aantal"]);
-                array_push($_SESSION["artikelen"], $product);
-
-            } elseif (isset($_POST["submitHuur"]) && $products["onderhoud"] == 0) {
-
-                $query = "SELECT bestelDatum, retourDatum FROM orderregel WHERE orderregel_idArtikel = ?";
-                $stmt = $db->prepare($query);
-                $stmt->execute(array($_GET['id']));
-                $ranges = $stmt->fetch();
+                if ($_POST["aantal"] > 0 && $_POST["aantal"] !== "") {
+                    $totaalPrijs = $_POST["aantal"] * $products["prijs"];
+                    $product = array("id" => $products["idartikel"], "aantal" => $_POST["aantal"], "naam" => $products["naam"], "afbeelding" => $products["afbeelding"], "prijs" => $products["prijs"], "totaalprijs" => $totaalPrijs, "startDatum" => "Koopproduct", "eindDatum" => "");
+                    array_push($_SESSION["artikelen"], $product);
+                } else {
+                    echo("Voer een aantal in");
+                }
 
 
+            } elseif (isset($_POST["submitHuur"]) && $products["onderhoud"] == 0 && $_POST["aantal"] > 0 && $_POST["aantal"] !== "" && $_POST["startDatum"] == "" && $_POST["eindDatum"] == "") {
                 $start = new DateTime($_POST["startDatum"]);
                 $eind = new DateTime($_POST["eindDatum"]);
                 $now = new DateTime();
-//                if ($start < $now) {
-//                    echo("De begindatum moet in de toekomst zijn");
-//                }
+
                 $ingevuldeData = array('start' => $start, 'end' => $eind);
 
+                if ($_POST["startDatum"] !== "" && $_POST["eindDatum"] !== "" && $_POST["aantal"] > 0 && $_POST["aantal"] !== "") {
+                    $interval = ($start->diff($eind));
+                    $days = $interval->format('%d');
+                    $weeks = round($days / 7, 2);
+                    $whole = floor($weeks);
+                    $comma = round($weeks - $whole, 2);
 
-                if ($start > $eind) {
-                    echo("Einddatum moet na start datum zijn");
-                } else {
-                    $product = array("id" => $products["idartikel"], "aantal" => $_POST["aantal"], "startDatum" => $_POST["startDatum"], "eindDatum" => $_POST["eindDatum"]);
+                    switch ($comma) {
+                        case 0.14:
+                            $huurdagen = 1;
+                            break;
+                        case 0.29:
+                            $huurdagen = 2;
+                            break;
+                        case 0.43:
+                            $huurdagen = 3;
+                            break;
+                        case 0.57:
+                            $huurdagen = 4;
+                            break;
+                        case 0.71:
+                            $huurdagen = 5;
+                            break;
+                        case 0.86:
+                            $huurdagen = 6;
+                            break;
+                        case 0:
+                        default:
+                            $huurdagen = 0;
+                            break;
+                    }
+                    $totaalPrijs = $whole * $products["prijsWeek"] + $huurdagen * $products["prijsDag"];
+                    $product = array("id" => $products["idartikel"], "naam" => $products["naam"], "afbeelding" => $products["afbeelding"], "prijs" => $products["prijsDag"], "totaalprijs" => $totaalPrijs, "aantal" => $_POST["aantal"], "startDatum" => $_POST["startDatum"], "eindDatum" => $_POST["eindDatum"], "weken" => $whole, "dagen" => $huurdagen);
                     array_push($_SESSION["artikelen"], $product);
+                } else if ($start > $eind) {
+                    echo("Einddatum moet na start datum zijn");
+                } else if ($start < $now) {
+                    echo("Begindatum moet in de toekomst zijn");
+                } else if ($_POST["eindDatum"] == null || $_POST["startDatum"] == null) {
+                    echo("Voer de velden juist in");
                 }
-
-                $interval = ($start->diff($eind));
-                $days = $interval->format('%d');
-                $weeks = round($days / 7, 2);
-                $whole = floor($weeks);
-                $comma = round($weeks - $whole, 2);
-
-                switch ($comma) {
-                    case 0.14:
-                        $huurdagen = 1;
-                        break;
-                    case 0.29:
-                        $huurdagen = 2;
-                        break;
-                    case 0.43:
-                        $huurdagen = 3;
-                        break;
-                    case 0.57:
-                        $huurdagen = 4;
-                        break;
-                    case 0.71:
-                        $huurdagen = 5;
-                        break;
-                    case 0.86:
-                        $huurdagen = 6;
-                        break;
-                    case 0:
-                        $huurdagen = 0;
-                        break;
-                }
-
-                echo($whole . " weken en " . $huurdagen . " dagen");
-                var_dump($comma);
-
             } else if ((isset($_POST["submitHuur"]) || isset($_POST["submitKoop"])) && $products["onderhoud"] == 1) {
                 echo "Dit product is in onderhoud";
             }
