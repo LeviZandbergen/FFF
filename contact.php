@@ -2,5 +2,6 @@
 <?php
 include "Includes/header.php";
 include "Includes/menu.php";
+include "Includes/contactContent.php";
 include "Includes/footer.php";
 ?>

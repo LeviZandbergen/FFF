@@ -6,16 +6,36 @@
         if (isset($_SESSION['artikelen'])) {
             foreach ($_SESSION['artikelen'] as $pId => $items) {
                 echo '<div class="artikelKarWrap">';
-                echo '<div class="productAfbeelding"><img style="max-height: 99%; max-width: 99%" src="../FFF/Images/' . $items['afbeelding'] . '" alt="Productafbeelding"></div><pre class="tab">' . ' ' . $items['naam'] . '        ' . $items['startDatum'] . '     ' . $items['eindDatum'] . '     €' . $items['prijs'] . '       €' . $items['totaalprijs'] . '</pre>';
-                echo '<form class="prullenbak" method="POST"><img name="verwijderen" onchange="this.form.submit() id="' . $items["id"] . '" style="max-height: 50px; cursor: pointer" src="../FFF/Images/prullenbak.png"<input type="hidden" name="verwijderen" value="verwijdern"/> </form></div>';
+                echo '<div class="productAfbeelding">';
+                echo '<img style="max-height: 99%; max-width: 99%" src="../FFF/Images/' . $items["afbeelding"] . '">';
+                echo '</div>';
+                echo '<pre class="tab">';
+                echo '<div>';
+                echo 'Aantal<input style="width: 50px;" type="text" value="' . ($items['aantal']) . '">';
+                echo '</div>';
+                echo '<a class="info">' . $items['naam'] . '</a > ';
+                echo '<a class="info" > ' . $items['startDatum'] . ' </a > ';
+                echo '<a class="info" > ' . $items['eindDatum'] . ' </a > ';
+                echo '<a class="info" > €' . $items['prijs'] . ' </a > ';
+                echo '<a class="info" > €' . $items['totaalprijs'] . ' </a > ';
+                echo '</pre > ';
+                echo '<form class="prullenbak" method = "POST" >';
+                echo '<button style = "background: none; border: none; font-size: 1em;" type = "submit"
+                    name = "verwijderen" >';
+                echo '<img style = "max-height: 50px; cursor: pointer" src = "../FFF/Images/prullenbak.png"
+                     name = "verwijderen" >';
+                echo '<input type = "hidden" name = "id" value = "' . $pId . '" >';
+                echo '</button >';
+                echo '</form >';
+                echo '</div >';
             }
         } else {
             echo 'Er zit geen product in uw winkelwagen';
         }
         if (isset($_POST["verwijderen"])) {
-            echo '<script language="javascript">';
-            echo 'alert("message successfully sent")';
-            echo '</script>';
+            $id = $_POST["id"];
+            unset($_SESSION["artikelen"][$id]);
+            header("Refresh:0");
         }
         ?>
     </div>
@@ -61,7 +81,7 @@
                 if ($result['straat'] == $straatnaam && $result['huisnummer'] == $huisnummer && $result['woonplaats'] == $woonplaats && $result['postcode'] == $postcode) {
 //                    order($idKlant, $idAdres);
                 } else {
-                    $query = "INSERT INTO address (address_idKlant, straat, huisnummer, postcode, woonplaats)  VALUES ('$idKlant','$straatnaam', '$huisnummer', '$postcode', '$woonplaats')";
+                    $query = "INSERT INTO address(address_idKlant, straat, huisnummer, postcode, woonplaats)  VALUES('$idKlant', '$straatnaam', '$huisnummer', '$postcode', '$woonplaats')";
                     $db->exec($query);
                     if ($query) {
                         $sql = "SELECT idaddress FROM address WHERE straat = $straatnaam, address_idklant = $idKlant, huisnummer = $huisnummer, postcode = $postcode, woonplaats = $woonplaats";
@@ -73,7 +93,7 @@
                     }
                 }
             } else {
-                $query = "INSERT INTO klant (naam, tussenvoegsel, achternaam, email)  VALUES ('$naam', '$tussenvoegsel', '$achternaam', '$email')";
+                $query = "INSERT INTO klant(naam, tussenvoegsel, achternaam, email)  VALUES('$naam', '$tussenvoegsel', '$achternaam', '$email')";
                 $db->exec($query);
                 if ($query) {
                     $sql = "SELECT idklant FROM klant WHERE email = :email";
@@ -82,7 +102,7 @@
                     $result = $stmt->fetch(PDO::FETCH_ASSOC);
                     $idKlant = $result["idklant"];
                     if ($sql) {
-                        $query = "INSERT INTO address (address_idKlant, straat, huisnummer, postcode, woonplaats)  VALUES ('$idKlant','$straatnaam', '$huisnummer', '$postcode', '$woonplaats')";
+                        $query = "INSERT INTO address(address_idKlant, straat, huisnummer, postcode, woonplaats)  VALUES('$idKlant', '$straatnaam', '$huisnummer', '$postcode', '$woonplaats')";
                         $db->exec($query);
                         order();
                     }

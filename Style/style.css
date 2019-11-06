@@ -14,7 +14,7 @@ html {
     flex-wrap: nowrap;
     display: inline-flex;
     justify-content: space-around;
-    width: 100%;
+    width: 99.8%;
     height: 50px;
     background-color: white;
 }
@@ -42,6 +42,8 @@ html {
     width: 98.8%;
     position: fixed;
     bottom: 0;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 #contactInfo {
@@ -160,4 +162,53 @@ a {
     align-self: center;
     margin: 0 auto;
     max-height: 100%;
+}
+
+#homefoto {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 500px;
+    width: 50%;
+}
+
+.tab {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.prullenbak {
+    display: flex;
+    align-items: center;
+}
+
+.info {
+    width: 100px;
+}
+
+#hometext {
+    text-align: center;
+    width: 70%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+}
+
+#copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.contactText {
+    width: 70%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
