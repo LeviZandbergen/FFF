@@ -1,5 +1,4 @@
 <link href="../FFF/Style/style.css" rel="stylesheet">
-
 <html>
 <div id="footer">
     <div id="copyright">
@@ -11,6 +10,5 @@
         <a>Groningen</a><Br><Br>
         <a>Tel:0563-23145687</a>
     </div>
-
 </div>
 </html>

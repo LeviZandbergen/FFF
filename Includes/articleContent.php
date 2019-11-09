@@ -15,7 +15,6 @@
                 foreach ($type as $key => $value) {
                     echo '<option value="' . $type[$key]["type"] . '">' . $type[$key]["type"] . '</option>';
                 } ?>
-
             </select>
         </form>
     </div>
@@ -27,6 +26,7 @@
         $stmt->execute(array());
         $product_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+        //        Voert Querries uit op basis de gekozen categorie
         if (isset($_POST['categorie']))
             if ($_POST['categorie'] == 'Huur') {
                 $articles = "SELECT * FROM artikel WHERE artikel_idCategorie = 2";
@@ -44,10 +44,10 @@
                 $stmt->execute(array());
                 $product_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
             }
+
         if (!empty($product_array)) {
             foreach ($product_array as $key => $value) {
-                ?>
-                <?php echo '<a href="product.php?id=' . $product_array[$key]['idartikel'] . '"/>' ?>
+                echo '<a href="product.php?id=' . $product_array[$key]['idartikel'] . '"/>' ?>
                 <div class="article-item" style="cursor: pointer">
                     <div class="article-image">
                         <img style="max-height: 100%; max-width: 100%; margin: 0 auto; display: block;"
@@ -69,11 +69,9 @@
                         <?php } ?>
                     </div>
                 </div>
-
                 <?php
             }
-        }
-        ?>
+        } ?>
     </div>
 </div>
 </html>
