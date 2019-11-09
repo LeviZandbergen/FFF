@@ -212,3 +212,29 @@ a {
     margin-left: auto;
     margin-right: auto;
 }
+
+#button1 {
+    width: 170px;
+    text-align: center;
+    float: left;
+    height: 40px;
+    background: none;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: 1px solid black;
+}
+
+#button2 {
+    width: 170px;
+    float: right;
+    text-align: center;
+    height: 40px;
+    background: none;
+    margin-right: 20px;
+    margin-top: 20px;
+    border: 1px solid black;
+}
+
+.medewerkerNavigatie {
+    height: 40%;
+}

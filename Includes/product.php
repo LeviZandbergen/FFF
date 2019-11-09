@@ -4,10 +4,9 @@ $stmt = $db->prepare($query);
 $stmt->execute(array($_GET['id']));
 $products = $stmt->fetch();
 
-if ($_SESSION["artikelen"]) {
-
-} else {
+if (!$_SESSION["artikelen"]) {
     $_SESSION["artikelen"] = array();
+
 }
 //$_SESSION["artikelen"] = array();
 ?>
@@ -108,11 +107,22 @@ if ($_SESSION["artikelen"]) {
                     ?>
                 </form>
             <?php }
+
             if (isset($_POST["submitKoop"]) && $products["onderhoud"] == 0) {
                 if ($_POST["aantal"] > 0 && $_POST["aantal"] !== "") {
-                    $totaalPrijs = $_POST["aantal"] * $products["prijs"];
-                    $product = array("id" => $products["idartikel"], "aantal" => $_POST["aantal"], "naam" => $products["naam"], "afbeelding" => $products["afbeelding"], "prijs" => $products["prijs"], "totaalprijs" => $totaalPrijs, "startDatum" => "Koopproduct", "eindDatum" => "");
-                    array_push($_SESSION["artikelen"], $product);
+                    $indicator = 0;
+                    foreach ($_SESSION['artikelen'] as $pId => $items) {
+                        if ($items["id"] == $products["idartikel"]) {
+                            $_SESSION["artikelen"][$pId]["aantal"] = $_POST["aantal"];
+                            $indicator = 1;
+                        }
+                    }
+                    if ($indicator == 0) {
+                        $product = array("id" => $products["idartikel"], "aantal" => $_POST["aantal"], "naam" => $products["naam"], "afbeelding" => $products["afbeelding"], "prijs" => $products["prijs"], "categorie" => $products['artikel_idCategorie']);
+                        array_push($_SESSION["artikelen"], $product);
+                    }
+
+
                 } else {
                     echo("Voer een aantal in");
                 }
@@ -133,8 +143,8 @@ if ($_SESSION["artikelen"]) {
 
                     } else {
 
-                        $interval = ($start->diff($eind));
-                        $days = $interval->format('%d');
+                        $interval = date_diff($start, $eind);
+                        $days = $interval->format("%a");
                         $weeks = round($days / 7, 2);
                         $whole = floor($weeks);
                         $comma = round($weeks - $whole, 2);
@@ -163,8 +173,7 @@ if ($_SESSION["artikelen"]) {
                                 $huurdagen = 0;
                                 break;
                         }
-                        $totaalPrijs = $whole * $products["prijsWeek"] + $huurdagen * $products["prijsDag"];
-                        $product = array("id" => $products["idartikel"], "naam" => $products["naam"], "afbeelding" => $products["afbeelding"], "prijs" => $products["prijsDag"], "totaalprijs" => $totaalPrijs, "aantal" => $_POST["aantal"], "startDatum" => $_POST["startDatum"], "eindDatum" => $_POST["eindDatum"], "weken" => $whole, "dagen" => $huurdagen);
+                        $product = array("id" => $products["idartikel"], "naam" => $products["naam"], "afbeelding" => $products["afbeelding"], "prijs" => $products["prijsDag"], "aantal" => $_POST["aantal"], "startDatum" => $_POST["startDatum"], "eindDatum" => $_POST["eindDatum"], "categorie" => $products['artikel_idCategorie'], "weken" => $whole, "dagen" => $days, "weekPrijs" => $products["prijsWeek"], "dagPrijs" => $products["prijsDag"]);
                         array_push($_SESSION["artikelen"], $product);
                     }
                 } else if ($_POST["aantal"] < 0 || $_POST["aantal"] == "") {
@@ -175,8 +184,6 @@ if ($_SESSION["artikelen"]) {
             } else if ((isset($_POST["submitHuur"]) || isset($_POST["submitKoop"])) && $products["onderhoud"] == 1) {
                 echo "Dit product is in onderhoud";
             }
-            //            var_dump($_SESSION["artikelen"])
-
             ?>
         </div>
     </div>
