@@ -13,7 +13,9 @@
                     <pre class="tab">
                         <div>
                             <form method="POST" name="aantalForm">
-                                Aantal<input onchange="this.form.submit()" style="width: 50px;" type="number"
+                                Aantal<input class="info" onchange="this.form.submit()"
+                                             style="width: 50px; margin-top: 30px"
+                                             type="number"
                                              name="nieuwAantal"
                                              value="<?php echo $items['aantal'] ?>">
                                 <input type="hidden" name="submitAantal" value="<?php echo $pId ?>">
