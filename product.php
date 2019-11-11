@@ -86,7 +86,7 @@ if (isset($_POST["submitKoop"]) && $products["onderhoud"] == 0) {
                     break;
             }
 //            Zet het product in de winkelwagen
-            $product = array("id" => $products["idartikel"], "naam" => $products["naam"], "afbeelding" => $products["afbeelding"], "prijs" => $products["prijsDag"], "aantal" => $_POST["aantal"], "startDatum" => $_POST["startDatum"], "eindDatum" => $_POST["eindDatum"], "categorie" => $products['artikel_idCategorie'], "weken" => $whole, "dagen" => $days, "weekPrijs" => $products["prijsWeek"], "dagPrijs" => $products["prijsDag"]);
+            $product = array("id" => $products["idartikel"], "naam" => $products["naam"], "afbeelding" => $products["afbeelding"], "prijs" => $products["prijsDag"], "aantal" => $_POST["aantal"], "startDatum" => $_POST["startDatum"], "eindDatum" => $_POST["eindDatum"], "categorie" => $products['artikel_idCategorie'], "weken" => $whole, "dagen" => $huurdagen, "weekPrijs" => $products["prijsWeek"], "dagPrijs" => $products["prijsDag"]);
             array_push($_SESSION["artikelen"], $product);
         }
 //        Wanneer er geen aantal is gevult wordt er een alert getoont
