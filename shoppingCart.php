@@ -47,7 +47,6 @@ if (isset($_POST["submit"]) && !empty($_SESSION['artikelen'])) {
     } else {
         $bezorgen = 0;
     }
-    var_dump("bezorgen = " . $bezorgen);
 //    Controleert of postcode juist is
     $controlPostcode = substr(str_replace(' ', '', strtoupper($postcode)), 0, 6);
     if (!preg_match('/\d\d\d\d[A-Z]{2}/', $controlPostcode)) {
@@ -150,9 +149,8 @@ function order($idKlant, $idAddress, $totaalprijs, $db, $bezorgen, $korting, $em
                 $categorie = $items["categorie"];
                 $aantal = $items["aantal"];
                 $empty = '';
-
 //                Kijkt of een product een koopproduct is
-                if ($categorie = 1) {
+                if ($categorie == 1) {
                     $query = "INSERT INTO orderregel (orderRegel_idArtikel, orderRegel_idOrders, bestelDatum, retourDatum, aantal) VALUES ('$idArtikel', '$idOrders', '$empty', '$empty', '$aantal')";
                     $db->exec($query);
 //                    Kijkt of een product een Huurproduct is

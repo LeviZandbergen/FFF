@@ -4,5 +4,5 @@ include "Includes/header.php";
 include('Includes/bestelRetourContent.php');
 include "Includes/footer.php";
 
-$query = "SELECT * FROM "
+
 ?>

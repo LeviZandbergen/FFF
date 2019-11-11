@@ -54,6 +54,38 @@ if (isset($_POST["submitKoop"]) && $products["onderhoud"] == 0) {
             echo 'alert("Begindatum moet in de toekomst zijn")';
             echo '</script>';
         } else {
+//Berekend het aantal dagen en weken tussen de ingevulde data's
+            $interval = date_diff($start, $eind);
+            $days = $interval->format("%a");
+            $weeks = round($days / 7, 2);
+            $whole = floor($weeks);
+            $comma = round($weeks - $whole, 2);
+
+//Hiermee word gekeken hoeveel dagen er zijn
+            switch ($comma) {
+                case 0.14:
+                    $huurdagen = 1;
+                    break;
+                case 0.29:
+                    $huurdagen = 2;
+                    break;
+                case 0.43:
+                    $huurdagen = 3;
+                    break;
+                case 0.57:
+                    $huurdagen = 4;
+                    break;
+                case 0.71:
+                    $huurdagen = 5;
+                    break;
+                case 0.86:
+                    $huurdagen = 6;
+                    break;
+                case 0:
+                default:
+                    $huurdagen = 0;
+                    break;
+            }
             $indicator = 0;
             foreach ($_SESSION['artikelen'] as $pId => $items) {
 //            Kijkt of het product al in de winkelmand zit zoja dan veranderd deze het aantal
@@ -61,43 +93,14 @@ if (isset($_POST["submitKoop"]) && $products["onderhoud"] == 0) {
                     $_SESSION["artikelen"][$pId]["aantal"] = $_POST["aantal"];
                     $_SESSION["artikelen"][$pId]["startDatum"] = $_POST["startDatum"];
                     $_SESSION["artikelen"][$pId]["eindDatum"] = $_POST["eindDatum"];
+                    $_SESSION["artikelen"][$pId]["weken"] = $whole;
+                    $_SESSION["artikelen"][$pId]["dagen"] = $huurdagen;
 //                Zet de indicator op 1 wat inhoud dat het product al in de winkelmand zit
                     $indicator = 1;
                 }
             }
 //        als het product nog niet in de winkelmand zit zet hij deze in de winkelmand
             if ($indicator == 0) {
-//Berekend het aantal dagen en weken tussen de ingevulde data's
-                $interval = date_diff($start, $eind);
-                $days = $interval->format("%a");
-                $weeks = round($days / 7, 2);
-                $whole = floor($weeks);
-                $comma = round($weeks - $whole, 2);
-//Hiermee word gekeken hoeveel dagen er zijn
-                switch ($comma) {
-                    case 0.14:
-                        $huurdagen = 1;
-                        break;
-                    case 0.29:
-                        $huurdagen = 2;
-                        break;
-                    case 0.43:
-                        $huurdagen = 3;
-                        break;
-                    case 0.57:
-                        $huurdagen = 4;
-                        break;
-                    case 0.71:
-                        $huurdagen = 5;
-                        break;
-                    case 0.86:
-                        $huurdagen = 6;
-                        break;
-                    case 0:
-                    default:
-                        $huurdagen = 0;
-                        break;
-                }
 //            Zet het product in de winkelwagen
                 $product = array("id" => $products["idartikel"], "naam" => $products["naam"], "afbeelding" => $products["afbeelding"], "prijs" => $products["prijsDag"], "aantal" => $_POST["aantal"], "startDatum" => $_POST["startDatum"], "eindDatum" => $_POST["eindDatum"], "categorie" => $products['artikel_idCategorie'], "weken" => $whole, "dagen" => $huurdagen, "weekPrijs" => $products["prijsWeek"], "dagPrijs" => $products["prijsDag"]);
                 array_push($_SESSION["artikelen"], $product);

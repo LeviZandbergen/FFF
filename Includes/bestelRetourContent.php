@@ -5,7 +5,49 @@
         <a href="../FFF/bestelRetour.php" id="button2">Bestelling/Retour</a>
     </div>
     <div id="BestelRetour">
+        <?php
+        $now = date('Y-m-d');
+        $query = "SELECT * FROM orders INNER JOIN orderregel ON orderRegel_idOrders = idOrders INNER JOIN klant ON orders_idKlant = idKlant  WHERE retourDatum = '$now' OR bestelDatum = '$now' AND bezorgen = 0;";
+        $stmt = $db->prepare($query);
+        $stmt->execute(array());
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($result as $id => $test) { ?>
+            <div class="retourBestelWrap">
+            <pre class="tabRetBest">
+                <a class="info" style="margin-right: 30px">Order ID <?php echo $test["idOrders"] ?></a>
+                <a class="info"> <?php echo wordwrap(ucfirst($test["naam"]) . " " . $test["tussenvoegsel"] . " " . ucfirst($test["achternaam"]), 30, "<br>\n") ?> </a>
+            </pre>
 
+                <form method="POST" class="betaaldForm">
+                    <?php
+                    if ($test["betaald"] == 0) { ?>
+                        Betaald<input type="checkbox" name="unchecked" value="unchecked" onchange="this.form.submit()">
+                        <input type="hidden" name="id" value="<?php echo $test['idOrders'] ?>">
+                    <?php } else { ?>
+                        Betaald<input type="checkbox" checked name="checked" value="checked"
+                                      onchange="this.form.submit()">
+                        <input type="hidden" name="id" value="<?php echo $test['idOrders'] ?>">
+                        <input type="hidden" name="test" value="checked">
+                    <?php } ?>
+                </form>
+            </div>
+        <?php }
+
+        if (isset($_POST["unchecked"])) {
+            $id = $_POST["id"];
+            $query = "UPDATE orders SET betaald = '1' WHERE idOrders='" . $id . "'";
+            $stmt = $db->prepare($query);
+            $stmt->execute(array());
+            echo "<script>window.location = 'bestelRetour.php';</script>";
+        }
+        if (isset($_POST["test"])) {
+            $id = $_POST["id"];
+            $query = "UPDATE orders SET betaald = '0' WHERE idOrders='" . $id . "'";
+            $stmt = $db->prepare($query);
+            $stmt->execute(array());
+            echo "<script>window.location = 'bestelRetour.php';</script>";
+        }
+        ?>
     </div>
 </div>
 </html>
