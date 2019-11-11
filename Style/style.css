@@ -246,7 +246,7 @@ a {
 }
 
 .tabRetBest {
-    width: 100%;
+    width: 200%;
     display: flex;
     /*justify-content: space-around;*/
     align-items: center;
@@ -254,4 +254,12 @@ a {
 
 .betaaldForm {
     text-align: center;
+    margin-top: 15px;
+}
+
+.tabRetBestC {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

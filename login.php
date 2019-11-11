@@ -26,10 +26,17 @@ if (isset($_POST["submit"])) {
 //            Zet gegevens in sessie
             if (password_verify($password, $hash)) {
                 // $mijnSession = session_id();
-                $_SESSION["ID"] = 1;
                 $_SESSION["EMAIL"] = $result["email"];
-                $_SESSION["STATUS"] = 1;
-                echo "<script>location.href='/project-sites/fff/medewerker.php';</script>";
+                if ($result["email"] == 'medewerker1@mail.nl') {
+                    $_SESSION["ID"] = 1;
+                    $_SESSION["STATUS"] = 1;
+                    echo "<script>location.href='/project-sites/fff/medewerker.php';</script>";
+                } else if ($result["email"] == 'chauffeur1@mail.nl') {
+                    $_SESSION["ID"] = 2;
+                    $_SESSION["STATUS"] = 2;
+                    echo "<script>location.href='/project-sites/fff/bestelRetour.php';</script>";
+                }
+                $_SESSION["EMAIL"] = $result["email"];
             } else {
                 $error .= "Inloggegevens ongeldig. <br>";
             }
