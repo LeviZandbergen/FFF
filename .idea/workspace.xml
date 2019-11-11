@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a43dfd4e-922d-466d-9a3c-78056c4f177e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Includes/bestelRetourContent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Includes/bestelRetourContent.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,16 +78,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="2654" />
-          <entry key="php" value="25614" />
-          <entry key="txt" value="407" />
+          <entry key="php" value="25670" />
+          <entry key="txt" value="473" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="2654" />
           <entry key="HTML" value="42" />
-          <entry key="PHP" value="25476" />
-          <entry key="PLAIN_TEXT" value="493" />
+          <entry key="PHP" value="25532" />
+          <entry key="PLAIN_TEXT" value="559" />
           <entry key="SQL" value="10" />
         </counts>
       </usages-collector>
@@ -120,8 +119,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Includes/bestelRetourContent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="53" column="78" lean-forward="true" selection-start-line="53" selection-start-column="78" selection-end-line="53" selection-end-column="78" />
+            <state relative-caret-position="400">
+              <caret line="60" column="64" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -284,7 +283,7 @@
       <workItem from="1573223905119" duration="4561000" />
       <workItem from="1573292238189" duration="7855000" />
       <workItem from="1573379854978" duration="323000" />
-      <workItem from="1573460117946" duration="10689000" />
+      <workItem from="1573460117946" duration="11893000" />
     </task>
     <task id="LOCAL-00001" summary="dagen en weken kunnen tussen 2 tijden berekend worden">
       <created>1572778036287</created>
@@ -342,11 +341,18 @@
       <option name="project" value="LOCAL" />
       <updated>1573470316840</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="de order bijgevoegd bij chauffeur bestel/retour lijsten">
+      <created>1573470837431</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1573470837431</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121348000" />
+    <option name="totallyTimeSpent" value="122552000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -434,7 +440,8 @@
     <MESSAGE value="Merge branch 'master' into RetrourBestel&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;&#10;en probleem opgelost met huurproducten en prijs" />
     <MESSAGE value="retour/bestelpagina voor medewerker klaar" />
     <MESSAGE value="retour/bestelpagina voor chauffeur klaar" />
-    <option name="LAST_COMMIT_MESSAGE" value="retour/bestelpagina voor chauffeur klaar" />
+    <MESSAGE value="de order bijgevoegd bij chauffeur bestel/retour lijsten" />
+    <option name="LAST_COMMIT_MESSAGE" value="de order bijgevoegd bij chauffeur bestel/retour lijsten" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Images/Logo.png">
@@ -598,8 +605,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Includes/bestelRetourContent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="53" column="78" lean-forward="true" selection-start-line="53" selection-start-column="78" selection-end-line="53" selection-end-column="78" />
+        <state relative-caret-position="400">
+          <caret line="60" column="64" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
         </state>
       </provider>
     </entry>
