@@ -40,7 +40,7 @@
         <?php
         $now = date('Y-m-d');
         $query = "SELECT * FROM orders INNER JOIN orderregel ON orderRegel_idOrders = idOrders INNER JOIN klant ON orders_idKlant = idKlant INNER JOIN fff.address
-ON orders_idAddress = idAddress WHERE retourDatum = '$now' AND bezorgen = 1 OR bestelDatum = '$now' AND bezorgen = 1;";
+ON orders_idAddress = idAddress WHERE retourDatum = '$now' AND bezorgen = 1 OR bestelDatum = '$now' AND bezorgen = 1 ORDER BY postcode ASC;";
         $stmt = $db->prepare($query);
         $stmt->execute(array());
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
