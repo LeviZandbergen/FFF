@@ -28,7 +28,7 @@
                             <a class="info"><?php echo $items['startDatum'] ?></a>
                             <a class="info"><?php echo $items['eindDatum'] ?></a>
                             <a class="info">€ <?php echo $items['prijs'] ?></a>
-                            <a class="info">€ <?php echo $items["totaalprijs"] = (float)(($items["weken"] * $items["weekPrijs"]) + ($items["dagen"] * $items["dagPrijs"]) * $items["aantal"]) ?></a>
+                            <a class="info">€ <?php echo $items["totaalprijs"] = (float)((($items["weken"] * $items["weekPrijs"]) + ($items["dagen"] * $items["dagPrijs"])) * $items["aantal"]) ?></a>
                             <?php
                         } else {
                             ?>
