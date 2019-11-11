@@ -16,10 +16,17 @@ if (isset($_POST["verwijderen"])) {
 if (isset($_POST["submitAantal"])) {
     $id = $_POST["submitAantal"];
     $nieuwAantal = $_POST["nieuwAantal"];
-//    Zet nieuwe aantal in array
-    $_SESSION["artikelen"][$id]["aantal"] = $nieuwAantal;
+    if ($nieuwAantal <= 0) {
+        echo '<script language="javascript">';
+        echo 'alert("Voer een ander aantal in")';
+        echo '</script>';
+    } else {
+        //    Zet nieuwe aantal in array
+        $_SESSION["artikelen"][$id]["aantal"] = $nieuwAantal;
 //    Herladen pagina
-    echo "<script>window.location = 'shoppingCart.php';</script>";
+        echo "<script>window.location = 'shoppingCart.php';</script>";
+    }
+
 }
 //Wanneer Producten worden gereserveerd
 if (isset($_POST["submit"]) && !empty($_SESSION['artikelen'])) {
@@ -40,7 +47,6 @@ if (isset($_POST["submit"]) && !empty($_SESSION['artikelen'])) {
     } else {
         $bezorgen = 0;
     }
-    var_dump("bezorgen = " . $bezorgen);
 //    Controleert of postcode juist is
     $controlPostcode = substr(str_replace(' ', '', strtoupper($postcode)), 0, 6);
     if (!preg_match('/\d\d\d\d[A-Z]{2}/', $controlPostcode)) {
@@ -144,7 +150,7 @@ function order($idKlant, $idAddress, $totaalprijs, $db, $bezorgen, $korting, $em
                 $aantal = $items["aantal"];
                 $empty = '';
 //                Kijkt of een product een koopproduct is
-                if ($categorie = 2) {
+                if ($categorie == 1) {
                     $query = "INSERT INTO orderregel (orderRegel_idArtikel, orderRegel_idOrders, bestelDatum, retourDatum, aantal) VALUES ('$idArtikel', '$idOrders', '$empty', '$empty', '$aantal')";
                     $db->exec($query);
 //                    Kijkt of een product een Huurproduct is
@@ -165,4 +171,5 @@ function order($idKlant, $idAddress, $totaalprijs, $db, $bezorgen, $korting, $em
         }
     }
 }
+
 ?>

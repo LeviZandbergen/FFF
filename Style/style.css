@@ -238,3 +238,28 @@ a {
 .medewerkerNavigatie {
     height: 40%;
 }
+
+.retourBestelWrap {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tabRetBest {
+    width: 200%;
+    display: flex;
+    /*justify-content: space-around;*/
+    align-items: center;
+}
+
+.betaaldForm {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.tabRetBestC {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

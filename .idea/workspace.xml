@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a43dfd4e-922d-466d-9a3c-78056c4f177e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Includes/lijstenContent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lijsten.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,7 +47,7 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="15" />
-          <entry key="project.open.time.0" value="8" />
+          <entry key="project.open.time.0" value="9" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.3" value="1" />
@@ -58,14 +56,14 @@
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="contactContent" value="1" />
           <entry key="css" value="10" />
-          <entry key="php" value="168" />
+          <entry key="php" value="188" />
           <entry key="png" value="1" />
         </counts>
       </usages-collector>
@@ -73,23 +71,24 @@
         <counts>
           <entry key="CSS" value="10" />
           <entry key="Image" value="1" />
-          <entry key="PHP" value="163" />
+          <entry key="PHP" value="183" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="2500" />
-          <entry key="php" value="23926" />
-          <entry key="txt" value="177" />
+          <entry key="css" value="2654" />
+          <entry key="php" value="25670" />
+          <entry key="txt" value="473" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="2500" />
+          <entry key="CSS" value="2654" />
           <entry key="HTML" value="42" />
-          <entry key="PHP" value="23798" />
-          <entry key="PLAIN_TEXT" value="263" />
+          <entry key="PHP" value="25532" />
+          <entry key="PLAIN_TEXT" value="559" />
+          <entry key="SQL" value="10" />
         </counts>
       </usages-collector>
     </session>
@@ -99,14 +98,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Includes/lijstenContent.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
-              <folding>
-                <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="448">
+              <caret line="36" column="80" selection-start-line="36" selection-start-column="80" selection-end-line="36" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -114,17 +110,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Style/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="240" selection-start-line="240" selection-end-line="240" />
+            <state relative-caret-position="418">
+              <caret line="256" column="18" selection-start-line="256" selection-start-column="18" selection-end-line="256" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lijsten.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Includes/bestelRetourContent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+            <state relative-caret-position="400">
+              <caret line="60" column="64" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -150,6 +146,9 @@
       <find>?&gt;</find>
       <find>ingevuldeData</find>
       <find>pre</find>
+      <find>var_</find>
+      <find>tab</find>
+      <find>info</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,23 +161,23 @@
         <option value="$PROJECT_DIR$/Includes/homeContent.php" />
         <option value="$PROJECT_DIR$/Includes/contactContent.php" />
         <option value="$PROJECT_DIR$/Includes/loginContent.php" />
-        <option value="$PROJECT_DIR$/Includes/medewerkerContent.php" />
         <option value="$PROJECT_DIR$/articles.php" />
         <option value="$PROJECT_DIR$/contact.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/product.php" />
         <option value="$PROJECT_DIR$/uitloggen.php" />
-        <option value="$PROJECT_DIR$/login.php" />
-        <option value="$PROJECT_DIR$/shoppingCart.php" />
         <option value="$PROJECT_DIR$/medewerker.php" />
         <option value="$PROJECT_DIR$/Includes/product.php" />
-        <option value="$PROJECT_DIR$/Includes/header.php" />
         <option value="$PROJECT_DIR$/Includes/footer.php" />
         <option value="$PROJECT_DIR$/Includes/articleContent.php" />
+        <option value="$PROJECT_DIR$/product.php" />
         <option value="$PROJECT_DIR$/Includes/shoppingCartContent.php" />
-        <option value="$PROJECT_DIR$/lijsten.php" />
+        <option value="$PROJECT_DIR$/shoppingCart.php" />
+        <option value="$PROJECT_DIR$/bestelRetour.php" />
+        <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/Includes/medewerkerContent.php" />
+        <option value="$PROJECT_DIR$/Includes/header.php" />
         <option value="$PROJECT_DIR$/Style/style.css" />
-        <option value="$PROJECT_DIR$/Includes/lijstenContent.php" />
+        <option value="$PROJECT_DIR$/Includes/bestelRetourContent.php" />
       </list>
     </option>
   </component>
@@ -189,9 +188,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="951" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="950" />
+    <option name="y" value="-10" />
+    <option name="width" value="979" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -282,7 +282,8 @@
       <workItem from="1573110777770" duration="17485000" />
       <workItem from="1573223905119" duration="4561000" />
       <workItem from="1573292238189" duration="7855000" />
-      <workItem from="1573379854978" duration="1835000" />
+      <workItem from="1573379854978" duration="323000" />
+      <workItem from="1573460117946" duration="11893000" />
     </task>
     <task id="LOCAL-00001" summary="dagen en weken kunnen tussen 2 tijden berekend worden">
       <created>1572778036287</created>
@@ -305,24 +306,59 @@
       <option name="project" value="LOCAL" />
       <updated>1573298924116</updated>
     </task>
-    <task id="LOCAL-00004" summary="laatste code netjes maken">
-      <created>1573380196728</created>
+    <task id="LOCAL-00004" summary="bestel retour pagina aangemaakt">
+      <created>1573458812211</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1573380196729</updated>
+      <updated>1573458812211</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="bug opgelost waarbij de prijs veel hoger is dan zou moeten zijn en in winkel mand kan een aantal niet lager dan 0 of 0 zijn">
+      <created>1573459498858</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1573459498858</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Merge branch 'master' into RetrourBestel&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;&#10;en probleem opgelost met huurproducten en prijs">
+      <created>1573460773337</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1573460773337</updated>
+    </task>
+    <task id="LOCAL-00007" summary="retour/bestelpagina voor medewerker klaar">
+      <created>1573467899379</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1573467899379</updated>
+    </task>
+    <task id="LOCAL-00008" summary="retour/bestelpagina voor chauffeur klaar">
+      <created>1573470316840</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1573470316840</updated>
+    </task>
+    <task id="LOCAL-00009" summary="de order bijgevoegd bij chauffeur bestel/retour lijsten">
+      <created>1573470837431</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1573470837431</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111431000" />
+    <option name="totallyTimeSpent" value="122552000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4978479" visible="true" weight="0.18456376" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4978479" visible="true" weight="0.20536913" />
       <window_info id="Structure" order="1" sideWeight="0.5021521" side_tool="true" weight="0.18723994" />
       <window_info id="Favorites" order="2" sideWeight="0.50070924" side_tool="true" weight="0.24966443" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -334,9 +370,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32907802" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -367,14 +403,45 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dagen en weken kunnen tussen 2 tijden berekend worden" />
     <MESSAGE value="Code netjes gemaakt en winkelwagen met kortingen werkend gemaakt" />
-    <MESSAGE value="laatste code netjes maken" />
-    <option name="LAST_COMMIT_MESSAGE" value="laatste code netjes maken" />
+    <MESSAGE value="bestel retour pagina aangemaakt" />
+    <MESSAGE value="bug opgelost waarbij de prijs veel hoger is dan zou moeten zijn en in winkel mand kan een aantal niet lager dan 0 of 0 zijn" />
+    <MESSAGE value="Merge branch 'master' into RetrourBestel&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;&#10;en probleem opgelost met huurproducten en prijs" />
+    <MESSAGE value="retour/bestelpagina voor medewerker klaar" />
+    <MESSAGE value="retour/bestelpagina voor chauffeur klaar" />
+    <MESSAGE value="de order bijgevoegd bij chauffeur bestel/retour lijsten" />
+    <option name="LAST_COMMIT_MESSAGE" value="de order bijgevoegd bij chauffeur bestel/retour lijsten" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Images/Logo.png">
@@ -402,20 +469,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/medewerker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -430,17 +483,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/articles.php">
+    <entry file="file://$PROJECT_DIR$/contact.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1507">
-          <caret line="102" column="68" selection-start-line="102" selection-start-column="68" selection-end-line="102" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -465,13 +511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Includes/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Includes/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -486,62 +525,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Includes/articleContent.php">
+    <entry file="file://$PROJECT_DIR$/Includes/lijstenContent.php" />
+    <entry file="file://$PROJECT_DIR$/articles.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-239">
-          <caret line="28" column="66" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="2" lean-forward="true" selection-end-line="5" selection-end-column="2" />
+        <state relative-caret-position="48">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Includes/shoppingCartContent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-317">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        <state relative-caret-position="512">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Includes/articleContent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medewerker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="53" lean-forward="true" selection-start-column="53" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shoppingCart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="145" column="57" lean-forward="true" selection-start-line="145" selection-start-column="57" selection-end-line="145" selection-end-column="57" />
+        <state relative-caret-position="467">
+          <caret line="169" column="38" lean-forward="true" selection-start-line="169" selection-end-line="170" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lijsten.php">
+    <entry file="file://$PROJECT_DIR$/product.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        <state relative-caret-position="528">
+          <caret line="47" column="50" lean-forward="true" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Includes/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="64" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bestelRetour.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Includes/medewerkerContent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        <state>
+          <caret lean-forward="true" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="36" column="80" selection-start-line="36" selection-start-column="80" selection-end-line="36" selection-end-column="80" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Style/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="240" selection-start-line="240" selection-end-line="240" />
+        <state relative-caret-position="418">
+          <caret line="256" column="18" selection-start-line="256" selection-start-column="18" selection-end-line="256" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Includes/lijstenContent.php">
+    <entry file="file://$PROJECT_DIR$/Includes/bestelRetourContent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="400">
+          <caret line="60" column="64" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
         </state>
       </provider>
     </entry>

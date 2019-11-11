@@ -6,6 +6,9 @@
     if (isset($_SESSION["ID"]) && $_SESSION["STATUS"] === 1) { ?>
         <a style="float: right" href="uitloggen.php"> Logout</a>
         <a style="float: right" href="../FFF/medewerker.php">Medewerker |</a>
+    <?php } else if (isset($_SESSION["ID"]) && $_SESSION["STATUS"] === 2) { ?>
+        <a style="float: right" href="uitloggen.php"> Logout</a>
+        <a style="float: right" href="../FFF/bestelRetour.php">Chauffeur |</a>
     <?php } else { ?>
         <a style="float: right" href="login.php">Login</a>
     <?php } ?>
