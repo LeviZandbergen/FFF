@@ -5,7 +5,7 @@ if (isset($_SESSION["ID"]) && $_SESSION["STATUS"] === 1) {
     header("Location:../index.php");
 }
 $now = date('Y-m-d');
-$query = "SELECT * FROM orders INNER JOIN orderregel ON orderRegel_idOrders = idOrders INNER JOIN klant ON orders_idKlant = idKlant  WHERE retourDatum = '$now' AND bezorgen = 0 OR bestelDatum = '$now' AND bezorgen = 0;";
+$query = "SELECT * FROM orders INNER JOIN orderregel ON orderRegel_idOrders = idOrders INNER JOIN klant ON orders_idKlant = idKlant  WHERE retourDatum = '$now' AND bezorgen = 0 OR bestelDatum = '$now' AND bezorgen = 0 GROUP BY idOrders;";
 $stmt = $db->prepare($query);
 $stmt->execute(array());
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

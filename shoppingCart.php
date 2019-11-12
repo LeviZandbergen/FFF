@@ -127,11 +127,6 @@ function order($idKlant, $idAddress, $totaalprijs, $db, $bezorgen, $korting, $em
         ($totaalprijs += 50);
     }
 
-// Zet de korting van de klant naar 0
-    $query = "UPDATE klant SET korting = '0' WHERE email='" . $email . "'";
-    $stmt = $db->prepare($query);
-    $stmt->execute(array());
-
 //    Plaatst de order
     $query = "INSERT INTO orders (orders_idKlant, orders_idAddress, totaalprijs, betaald, bezorgen) VALUES ('$idKlant', '$idAddress', '$totaalprijs', false, $bezorgen)";
     $db->exec($query);
@@ -151,7 +146,8 @@ function order($idKlant, $idAddress, $totaalprijs, $db, $bezorgen, $korting, $em
                 $empty = '';
 //                Kijkt of een product een koopproduct is
                 if ($categorie == 1) {
-                    $query = "INSERT INTO orderregel (orderRegel_idArtikel, orderRegel_idOrders, bestelDatum, retourDatum, aantal) VALUES ('$idArtikel', '$idOrders', '$empty', '$empty', '$aantal')";
+                    $now = date('Y-m-d', strtotime(' + 1 days'));
+                    $query = "INSERT INTO orderregel (orderRegel_idArtikel, orderRegel_idOrders, bestelDatum, retourDatum, aantal) VALUES ('$idArtikel', '$idOrders', '$now', '$empty', '$aantal')";
                     $db->exec($query);
 //                    Kijkt of een product een Huurproduct is
                 } else {
@@ -171,4 +167,5 @@ function order($idKlant, $idAddress, $totaalprijs, $db, $bezorgen, $korting, $em
         }
     }
 }
+
 ?>

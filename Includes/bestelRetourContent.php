@@ -6,12 +6,14 @@
         <a href="../FFF/bestelRetour.php" id="button2">Bestelling/Retour</a>
     </div>
     <?php
+//    Querry om de gegevens van bestellingen/retour voor de medewerker op te halen
     $now = date('Y-m-d');
     $query = "SELECT * FROM orders INNER JOIN orderregel ON orderRegel_idOrders = idOrders INNER JOIN klant ON orders_idKlant = idKlant  WHERE retourDatum = '$now' AND bezorgen = 0 OR bestelDatum = '$now' AND bezorgen = 0 GROUP BY idOrders;";
     $stmt = $db->prepare($query);
     $stmt->execute(array());
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+//    Voor elke bestelling/retour word deze code opgehaald
     foreach ($result as $id => $test) { ?>
         <div class="retourBestelWrap">
             <pre class="tabRetBest">
@@ -33,11 +35,12 @@
             </form>
         </div>
     <?php }
-
+//wanneer een chauffeur naar deze pagina gaat
     } else if (isset($_SESSION["ID"]) && $_SESSION["STATUS"] === 2) { ?>
     <html>
     <div class="content">
         <?php
+//        Haalt alle gegevens voor de chauffeurs op
         $now = date('Y-m-d');
         $query = "SELECT * FROM orders INNER JOIN orderregel ON orderRegel_idOrders = idOrders INNER JOIN klant ON orders_idKlant = idKlant INNER JOIN fff.address
 ON orders_idAddress = idAddress WHERE retourDatum = '$now' AND bezorgen = 1 OR bestelDatum = '$now' AND bezorgen = 1 GROUP BY idOrders ORDER BY postcode ASC;";

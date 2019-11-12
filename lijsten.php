@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
         echo "<script>window.location = 'chauffeur1lijst.php?id=3';</script>";
     }
     if ($_POST["download"] === 'Facturen') {
-        echo "<script>window.location = 'Facturen.php';</script>";
+        echo "<script>window.location = 'factuur.php';</script>";
     }
 }
 ?>
