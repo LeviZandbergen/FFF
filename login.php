@@ -5,6 +5,7 @@ include "Includes/loginContent.php";
 include "Includes/footer.php";
 ?>
 <?php
+
 $error = "";
 //Wanneer er op login wordt geklikt
 if (isset($_POST["submit"])) {
@@ -31,7 +32,7 @@ if (isset($_POST["submit"])) {
                     $_SESSION["ID"] = 1;
                     $_SESSION["STATUS"] = 1;
                     echo "<script>location.href='/project-sites/fff/medewerker.php';</script>";
-                } else if ($result["email"] == 'chauffeur1@mail.nl') {
+                } else if ($result["email"] == 'chauffeur1@mail.nl' || $result["email"] == 'chauffeur2@mail.nl' || $result["email"] == 'chauffeur3@mail.nl') {
                     $_SESSION["ID"] = 2;
                     $_SESSION["STATUS"] = 2;
                     echo "<script>location.href='/project-sites/fff/bestelRetour.php';</script>";

@@ -171,5 +171,4 @@ function order($idKlant, $idAddress, $totaalprijs, $db, $bezorgen, $korting, $em
         }
     }
 }
-
 ?>
