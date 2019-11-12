@@ -100,11 +100,11 @@
         </style>
     </head>
     <?php
-//    Pakt de datum van vandaag
+    //    Pakt de datum van vandaag
     $now = date('Y-m-d');
-//    Haalt alle gegevens op van de orders van vandaag
+    //    Haalt alle gegevens op van de orders van vandaag
     $query = "SELECT * FROM orders INNER JOIN orderregel ON orderRegel_idOrders = idOrders INNER JOIN klant ON orders_idKlant = idKlant INNER JOIN fff.address
-ON orders_idAddress = idAddress WHERE retourDatum = '$now' OR bestelDatum = '$now' GROUP BY idOrders ORDER BY postcode ASC;";
+ON orders_idAddress = idAddress WHERE retourDatum = '$now' OR bestelDatum = '$now' GROUP BY idOrders ORDER BY idOrders ASC;";
     $stmt = $db->prepare($query);
     $stmt->execute(array());
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -116,6 +116,7 @@ ON orders_idAddress = idAddress WHERE retourDatum = '$now' OR bestelDatum = '$no
         $orderregels = $stmt->fetchAll(PDO::FETCH_ASSOC);
         ?>
         <body>
+        <br style="page-break-before: always">
         <div class="invoice-box">
             <table cellpadding="0" cellspacing="0">
                 <tr class="top">
@@ -208,7 +209,7 @@ ON orders_idAddress = idAddress WHERE retourDatum = '$now' OR bestelDatum = '$no
 
                         <td>
                             <?php
-//                            Berekent de totaalprijs
+                            //                            Berekent de totaalprijs
                             if ($orderregel['artikel_idCategorie'] == 2) {
                                 echo $totaalprijs = (float)((($whole * $orderregel["prijsWeek"]) + ($huurdagen * $orderregel["prijsDag"])) * $orderregel["aantal"]);
                                 $NieuweTotaalprijs += $totaalprijs;
@@ -234,7 +235,7 @@ ON orders_idAddress = idAddress WHERE retourDatum = '$now' OR bestelDatum = '$no
                     <td>
                     </td>
                     <td>
-<!--                        Berekening met korting en bezorgkosten bij de totaalprijs op-->
+                        <!--                        Berekening met korting en bezorgkosten bij de totaalprijs op-->
                         Totaal: <?php
                         $korting = (100 - $value['korting']);
                         if ($value['bezorgen'] == 1) {
@@ -248,7 +249,6 @@ ON orders_idAddress = idAddress WHERE retourDatum = '$now' OR bestelDatum = '$no
             </table>
         </div>
         </body>
-        <br style="page-break-before: always">
     <?php } ?>
 </div>
 </html>
@@ -257,6 +257,7 @@ ON orders_idAddress = idAddress WHERE retourDatum = '$now' OR bestelDatum = '$no
         exportHTML();
         location.href = "lijsten.php"
     };
+
     //Functie om de pagina naar word te zetten
     function exportHTML() {
         var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
