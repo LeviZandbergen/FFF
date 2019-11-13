@@ -162,8 +162,12 @@ ON orders_idAddress = idAddress WHERE retourDatum = '$now' OR bestelDatum = '$no
                         Artikel
                     </td>
                     <td>
+                        Aantal
+                    </td>
+                    <td>
                         Prijs
                     </td>
+
                 </tr>
                 <?php
                 $NieuweTotaalprijs = 0;
@@ -206,7 +210,9 @@ ON orders_idAddress = idAddress WHERE retourDatum = '$now' OR bestelDatum = '$no
                         <td>
                             <?php echo $orderregel["naam"] ?>
                         </td>
-
+                        <td>
+                            <?php echo $orderregel["aantal"] ?>
+                        </td>
                         <td>
                             <?php
                             //                            Berekent de totaalprijs
@@ -225,6 +231,9 @@ ON orders_idAddress = idAddress WHERE retourDatum = '$now' OR bestelDatum = '$no
                 <tr>
                     <td>
                         <strong>Bezorgen</strong>
+                    </td>
+                    <td>
+
                     </td>
                     <td>
                         <strong>50</strong>
@@ -260,6 +269,7 @@ ON orders_idAddress = idAddress WHERE retourDatum = '$now' OR bestelDatum = '$no
 
     //Functie om de pagina naar word te zetten
     function exportHTML() {
+        var date = "<?php Print($now) ?>";
         var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
             "xmlns:w='urn:schemas-microsoft-com:office:word' " +
             "xmlns='http://www.w3.org/TR/REC-html40'>" +
@@ -271,7 +281,7 @@ ON orders_idAddress = idAddress WHERE retourDatum = '$now' OR bestelDatum = '$no
         var fileDownload = document.createElement("a");
         document.body.appendChild(fileDownload);
         fileDownload.href = source;
-        fileDownload.download = 'document.doc';
+        fileDownload.download = 'Facturen' + date + '.doc';
         fileDownload.click();
         document.body.removeChild(fileDownload);
     }
